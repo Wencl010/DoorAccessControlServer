@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/main.css">
+        <script src="/js/doorSelector.js"></script>
+        <script src="/js/scheduleDoors.js"></script>
+        <script src="/js/refreshHelper.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Schedule Doors | Door Access Controls</title>
+
+    </head>
+    <body>
+        <header>
+            <a class="back-arrow button" onclick="history.back()">
+                &lt Back
+            </a>
+            <h1>Door Access Controls</h1>
+        </header>
+        <div class="content">
+            <form name="openDoors" id="openDoors">
+                <div class="button-bar">
+                    <button type="reset" class="button clear" id="clear-button">Clear</button>
+
+                    <button type="submit" class="button submit" id="submit-button">Schedule Selected Doors</button>
+                </div>
+                <div class="col2-cont">
+                    <div class="main-content">
+                        <table id="doorCheckboxFields" class="door-selector">
+                            <tr class="headerRow">
+                                <th colspan="2" id="numSelected" class="red">*0 doors selected</th>
+                            </tr>
+                        </table>
+                        <div id="loader-container" class="loader-container">
+                            <div class="loader"></div>
+                        </div>
+                    </div>
+                    <div class="side-bar">
+                        <label for="name">Schedule Name: </label><br>
+                        <input type="text" id="name" name="name" maxlength="40"><br> 
+
+                        <label for="open">Open at: </label>
+                        <input type="time" id="open" name="open"><br>
+
+                        <label for="close">Close at: </label>
+                        <input type="time" id="close" name="close"><br>
+
+                        <label for="frequency">Event Frequency: </label><br>
+                        <input type="radio" id="oneTime" name="frequency" value="oneTime" checked autocomplete="off">
+                        <label for="oneTime">One Time</label>
+                        <input type="radio" id="recurring" name="frequency" value="recurring" autocomplete="off">
+                        <label for="recurring">Recurring</label>
+
+                        <div id="oneTimeQuestions">
+                            <label for="oneTimeDate">Event Date: </label>
+                            <input type="date" id="oneTimeDate" name="oneTimeDate"><br>
+                        </div>
+                        
+                        <div id="recurringQuestions" class="hidden">
+                            <label for="daySelector">Select the days it occurs on each week: </label><br>
+                            <input type="checkbox" id="sun" name="daySelector" class="dayOfWeek" checked><label for="sun" class="dayOfWeek">S</label>
+                            <input type="checkbox" id="mon" name="daySelector" class="dayOfWeek" checked><label for="mon" class="dayOfWeek">M</label>
+                            <input type="checkbox" id="tue" name="daySelector" class="dayOfWeek" checked><label for="tue" class="dayOfWeek">T</label>
+                            <input type="checkbox" id="wed" name="daySelector" class="dayOfWeek" checked><label for="wed" class="dayOfWeek">W</label>
+                            <input type="checkbox" id="thu" name="daySelector" class="dayOfWeek" checked><label for="thu" class="dayOfWeek">T</label>
+                            <input type="checkbox" id="fri" name="daySelector" class="dayOfWeek" checked><label for="fri" class="dayOfWeek">F</label>
+                            <input type="checkbox" id="sat" name="daySelector" class="dayOfWeek" checked><label for="sat" class="dayOfWeek">S</label>
+
+
+
+                            <br>
+                            <label for="startDate">First Occurs On: </label>
+                            <input type="date" id="startDate" name="startDate"><br>
+                            <label for="endDate">Last Occurs On: </label>
+                            <input type="date" id="endDate" name="endDate"><br>
+
+                        </div>
+
+                        
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div id="loader-overlay" class="hidden">
+            <div class="loader-container">
+                <div class="loader"></div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/main.css?v2">
+        <script src="/js/view-schedules.js"></script>
+        <script src="/js/refreshHelper.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>View Schedules | Door Access Controls</title>
+
+    </head>
+    <body>
+        <header>
+            <a class="back-arrow button" href="/">
+                &lt Back
+            </a>
+            <h1>Door Access Controls</h1>
+        </header>
+        <div class="content">
+            <div id="viewSchedules" class="scheduleSelector">
+                <div class="button-bar">
+                </div>
+                <table id="scheduleTable" class="door-selector">
+                    <tr class="headerRow">
+                       <th class="name">Name</th>
+                       <th>Open At</th>
+                       <th>Close At</th>
+                       <th>Frequency</th>
+                       <th>First Date</th>
+                       <th>Last Date</th>
+                       <th>Active Days</th>
+                    </tr>
+                </table>
+                <div id="loader-container" class="loader-container">
+                    <div class="loader"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

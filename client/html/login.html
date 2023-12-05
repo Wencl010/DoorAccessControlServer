@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/main.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login | Door Access Controls</title>
+
+    </head>
+    <body>
+        <header>
+            <h1>Door Access Controls</h1>
+        </header>
+        <div>
+            <p id="error" style="display: none;">Invalid username or password. Please try again.</p>
+            <form name="loginForm" id="loginForm">
+                <table>
+                    <tr>
+                        <td><label for="username">Username: </label></td>
+                        <td><input type="text" name='username' required id="username"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="password">Password: </label></td>
+                        <td><input type="password" name='password' required id="password"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center"><button type="submit" class="button submit">Login</button></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </body>
+    <script>
+        window.onload = function () {
+            document.getElementById("loginForm").addEventListener('submit', (event) => {
+                event.preventDefault();
+                
+                let requestOptions = {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name: document.getElementById("username").value, pw: document.getElementById("password").value })
+                };
+
+                fetch('/sendLoginDetails', requestOptions).then(x => x.json()).then(response => {
+                    if(response.status == "success"){
+                        window.location.href = "/"
+                    }
+                    else{
+                        document.getElementById("username").value = ""; 
+                        document.getElementById("password").value = "";
+                        document.getElementById("error").style.display = "block";
+                    }
+                });
+
+            });
+        }
+    </script>
+</html>

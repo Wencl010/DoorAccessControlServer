@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/main.css">
+        <script src="/js/doorSelector.js"></script>
+        <script src="/js/openDoors.js"></script>
+        <script src="/js/refreshHelper.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Open Door | Door Access Controls</title>
+
+    </head>
+    <body>
+        <header>
+            <a class="back-arrow button" href="/">
+                &lt Back
+            </a>
+            <h1>Door Access Controls</h1>
+        </header>
+        <div class="content">
+            <form name="openDoors" id="openDoors">
+                <div class="button-bar">
+                    <button type="reset" class="button clear">Clear</button>
+
+                    <button type="submit" class="button submit">Open Selected Doors</button>
+                </div>
+                <table id="doorCheckboxFields" class="door-selector">
+                    <tr class="headerRow">
+                        <th colspan="2" id="numSelected" class="red">*0 doors selected</th>
+                    </tr>
+                </table>
+                <div id="loader-container" class="loader-container">
+                    <div class="loader"></div>
+                </div>
+            </form>
+        </div>
+        <div id="loader-overlay" class="hidden">
+            <div class="loader-container">
+                <div class="loader"></div>
+            </div>
+        </div>
+    </body>
+</html>

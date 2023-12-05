@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/main.css">
+        <script src="/js/doorSelector.js"></script>
+        <script src="/js/view-door.js"></script>
+        <script src="/js/refreshHelper.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>View Doors | Door Access Controls</title>
+
+    </head>
+    <body>
+        <header>
+            <a class="back-arrow button" href="/">
+                &lt Back
+            </a>
+            <h1>Door Access Controls</h1>
+        </header>
+        <div class="content">
+            <div id="openDoors">
+                <table id="doorCheckboxFields" class="door-selector viewer">
+                </table>
+                <div id="loader-container" class="loader-container">
+                    <div class="loader"></div>
+                </div>
+            </div>
+        </div>
+        <div id="loader-overlay" class="hidden">
+            <div class="loader-container">
+                <div class="loader"></div>
+            </div>
+        </div>
+    </body>
+</html>
